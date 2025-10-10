@@ -1,0 +1,17 @@
+This file explicitly tells Netlify how to deploy a static, single-file HTML project.
+[build]
+
+CRITICAL: Since you are deploying only a single index.html file and not using a framework
+(like React or Vue), you must set the build command to empty/noop.
+command = ""
+
+CRITICAL: The publish directory tells Netlify where to find the files to serve.
+We assume index.html is in the root of the repository.
+publish = "/"
+
+This section ensures that all requests (including missing files) are routed to index.html,
+which is good practice for single-page applications, even if they're static.
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200

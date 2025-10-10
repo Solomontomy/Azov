@@ -1,0 +1,11 @@
+# Environment files
+.env
+.DS_Store # Mac operating system file
+Thumbs.db # Windows operating system file
+
+# Node dependencies (if you ever add a build tool)
+node_modules/
+
+# Logs and temporary files
+*.log
+*.tmp
