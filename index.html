@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CRITICAL SEO: Optimized Title Tag (Max 60 chars, target keywords first) -->
     <title>AZOV TENTS & SHADES | Car Parking Shades & Tensile Structures in Sharjah, UAE</title>
     
-    <!-- CRITICAL SEO: Meta Description (Compelling, keyword-rich summary for search results) -->
     <meta name="description" content="AZOV Tents & Shades, established 1996 in Sharjah, specializes in high-quality Car Parking Shades, Tents, and Architectural Tensile Structures. Get a free quote today.">
     
-    <!-- Secondary SEO Meta Tags -->
     <meta name="keywords" content="Car Parking Shades, Tensile Structures, Tents, Architectural Membranes, HDPE, PVC, PTFE, Sharjah, UAE">
 
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Font Awesome Icons (v6) for email, phone, and social media -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJdZ8xXp4f+8x28m5xXb820l2Kj2q+j2p6+L3d/D1D54Jq453r6+a7F+G1/8F+Hj/sP2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ/AHgOoY+rK9kQ8lV66j2+cK2J4l4v8W5f5B2pM4B9zV8l05kE4wP8w5vFzQ==
+" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
@@ -23,393 +21,571 @@
             background-color: #111827;
             scroll-behavior: smooth;
         }
+        /* Custom Colors */
         .text-accent { color: #20c997; }
         .bg-accent { background-color: #20c997; }
-        .hover\:bg-accent-dark:hover { background-color: #1aa37a; }
-        
-        /* Custom styling for the rotating slideshow */
-        .slide-container {
-            position: relative;
-            overflow: hidden;
-            height: 400px; /* Adjust height as needed */
-            border-radius: 0.5rem;
+        .hover\:bg-accent-dark:hover { background-color: #1aa07a; }
+        .border-accent { border-color: #20c997; }
+
+        /* Custom Gradient for Logo/Titles */
+        .text-gradient {
+            background: linear-gradient(90deg, #20c997 0%, #17a2b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
+        /* For the custom alert to handle newlines */
+        .alert-content {
+            white-space: pre-wrap;
+        }
+        
+        /* Image Slider styles */
+        #home {
+            min-height: 500px;
+        }
+        .slider-image {
             width: 100%;
             height: 100%;
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out;
+            object-fit: cover;
+            transition: opacity 0.5s ease-in-out;
         }
-        .slide.active {
-            opacity: 1;
+
+        /* Project Modal/Lightbox styles */
+        .modal-content {
+            max-height: 90vh; /* Limits the modal content height */
         }
+        .modal-gallery-container {
+            overflow-x: auto; /* For horizontal scroll on the 'View All' gallery */
+            white-space: nowrap; /* Prevents wrapping of gallery images */
+        }
+        .modal-gallery-item {
+            width: 250px; /* Fixed width for horizontal scroll items */
+            height: 150px;
+            display: inline-block;
+            margin-right: 1rem;
+            object-fit: cover;
+        }
+        
+        /* Custom scrollbar for gallery container (optional but good for UX) */
+        .modal-gallery-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .modal-gallery-container::-webkit-scrollbar-thumb {
+            background-color: #20c997;
+            border-radius: 10px;
+        }
+        .modal-gallery-container::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+
     </style>
 </head>
-<body>
-    <!-- Navigation Bar -->
-    <header class="sticky top-0 z-50 bg-gray-900 shadow-lg">
+<body class="text-white">
+
+    <header class="bg-gray-800 bg-opacity-95 sticky top-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo/Brand -->
-                <a href="#home" class="text-2xl font-extrabold text-white flex items-center">
-                    <span class="text-accent">AZOV</span> TENTS
-                </a>
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-2xl font-bold">
+                        AZOV <span class="text-gradient">SHADES</span>
+                    </a>
+                </div>
 
-                <!-- Desktop Navigation Links -->
-                <nav class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-300 hover:text-accent transition duration-150 font-medium">Home</a>
-                    <a href="#about" class="text-gray-300 hover:text-accent transition duration-150 font-medium">About</a>
-                    <a href="#services" class="text-gray-300 hover:text-accent transition duration-150 font-medium">Services</a>
-                    <a href="#projects" class="text-gray-300 hover:text-accent transition duration-150 font-medium">Projects</a>
-                    <a href="#contact" class="px-4 py-2 bg-accent text-gray-900 rounded-full font-semibold hover:bg-accent-dark transition duration-200 shadow-md">Get a Free Quote</a>
-                </nav>
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-gray-300 hover:text-accent transition duration-300">Home</a>
+                    <a href="#services" class="text-gray-300 hover:text-accent transition duration-300">Services</a>
+                    <a href="#gallery" class="text-gray-300 hover:text-accent transition duration-300">Gallery</a>
+                    <a href="#features" class="text-gray-300 hover:text-accent transition duration-300">Quality</a>
+                    <a href="#about" class="text-gray-300 hover:text-accent transition duration-300">About</a>
+                    </nav>
 
-                <!-- Mobile Menu Button (Hamburger) -->
-                <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-accent focus:outline-none">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
 
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
-            <a href="#home" class="block py-3 px-4 text-gray-300 hover:bg-gray-700 hover:text-accent transition duration-150">Home</a>
-            <a href="#about" class="block py-3 px-4 text-gray-300 hover:bg-gray-700 hover:text-accent transition duration-150">About</a>
-            <a href="#services" class="block py-3 px-4 text-gray-300 hover:bg-gray-700 hover:text-accent transition duration-150">Services</a>
-            <a href="#projects" class="block py-3 px-4 text-gray-300 hover:bg-gray-700 hover:text-accent transition duration-150">Projects</a>
-            <a href="#contact" class="block py-3 px-4 bg-accent text-gray-900 font-semibold hover:bg-accent-dark transition duration-200">Get a Free Quote</a>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Home</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700">Services</a>
+                <a href="#gallery" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700">Gallery</a>
+                <a href="#features" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700">Quality</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700">About</a>
+                </div>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section id="home" class="pt-20 pb-16 bg-gray-900 text-white min-h-screen flex items-center">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
-                <!-- Hero Content -->
-                <div>
-                    <span class="text-sm font-semibold text-accent uppercase tracking-wider">Established Since 1996</span>
-                    <h1 class="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
-                        Pioneering <span class="text-accent">Shade Solutions</span> and Architectural Tents in the UAE
-                    </h1>
-                    <p class="mt-6 text-lg text-gray-400 max-w-lg">
-                        AZOV TENTS & SHADES IND. L.L.C. delivers high-quality car parking shades, tents, and tensile structures built for durability and modern design.
-                    </p>
-                    <div class="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-lg bg-accent text-gray-900 hover:bg-accent-dark transition duration-300 transform hover:scale-105">
-                            Start Your Project
-                        </a>
-                        <a href="#services" class="inline-flex items-center justify-center px-8 py-3 border border-gray-600 text-base font-medium rounded-full text-white hover:bg-gray-700 transition duration-300">
-                            View Our Services
-                        </a>
-                    </div>
-                </div>
 
-                <!-- Hero Image Slideshow -->
-                <div class="relative mt-10 md:mt-0 slide-container shadow-2xl">
-                    <div class="slide active">
-                        <img src="https://placehold.co/700x400/1e293b/ffffff?text=Car+Shade+Solution" alt="Car Parking Shade Structure" class="w-full h-full object-cover rounded-lg">
+        <section id="home" class="relative min-h-[500px] overflow-hidden">
+            
+            <img id="hero-slider-image" 
+                 src="" 
+                 alt="AZOV Tents & Shades Project" 
+                 class="absolute inset-0 slider-image opacity-100">
+
+            <div class="absolute inset-0 bg-gray-900 opacity-60"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col justify-center h-full min-h-[500px] py-10 md:py-20">
+                <p class="text-accent uppercase tracking-widest font-semibold mb-4 text-sm">SINCE 1996 | SHARJAH, UAE</p>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-snug mb-6">
+                    Creating <span class="text-gradient">Durable, Elegant</span>, and Functional Shade Structures
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+                    Specialists in high-quality Car Parking Shades, Tents, and Architectural Tensile Structures using certified HDPE, PVC, and PTFE membranes.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+                    <a href="#gallery" class="w-full md:w-auto text-center px-8 py-3 text-lg font-semibold bg-accent text-gray-900 rounded-lg hover:bg-accent-dark transition duration-300 shadow-xl">
+                        View Our Projects
+                    </a>
+                    <a href="#about" class="w-full md:w-auto text-center px-8 py-3 text-lg font-semibold border-2 border-white text-white rounded-lg hover:bg-white hover:text-gray-900 transition duration-300">
+                        Learn About Our Quality
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center mb-4">Our End-to-End <span class="text-gradient">Process</span></h2>
+                <p class="text-lg text-gray-400 text-center max-w-3xl mx-auto mb-16">
+                    We manage the entire lifecycle of your shade structure, from design to durable installation.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-8 bg-gray-800 rounded-xl shadow-xl border border-gray-700 transform hover:-translate-y-2 transition duration-500">
+                        <div class="text-accent text-4xl mb-4 font-extrabold">01</div>
+                        <h3 class="text-2xl font-bold mb-3">Steel Fabrication</h3>
+                        <p class="text-gray-300">In-house welding and finishing of structural steel frames, treated with anti-corrosion coatings for long-term durability in the UAE climate.</p>
                     </div>
-                    <div class="slide">
-                        <img src="https://placehold.co/700x400/1e293b/ffffff?text=Large+Tensile+Structure" alt="Large Tensile Structure" class="w-full h-full object-cover rounded-lg">
+
+                    <div class="p-8 bg-gray-800 rounded-xl shadow-xl border border-gray-700 transform hover:-translate-y-2 transition duration-500">
+                        <div class="text-accent text-4xl mb-4 font-extrabold">02</div>
+                        <h3 class="text-2xl font-bold mb-3">Fabric Membrane Production</h3>
+                        <p class="text-gray-300">Precision cutting and stitching of architectural fabrics (HDPE, PVC, PTFE) to ensure perfect fit, UV resistance, and maximum shade coverage.</p>
                     </div>
-                    <div class="slide">
-                        <img src="https://placehold.co/700x400/1e293b/ffffff?text=Warehouse+Tents" alt="Warehouse Tents and Canvas" class="w-full h-full object-cover rounded-lg">
+
+                    <div class="p-8 bg-gray-800 rounded-xl shadow-xl border border-gray-700 transform hover:-translate-y-2 transition duration-500">
+                        <div class="text-accent text-4xl mb-4 font-extrabold">03</div>
+                        <h3 class="text-2xl font-bold mb-3">Erection & Safety</h3>
+                        <p class="text-gray-300">Installation by certified teams following strict safety protocols, ensuring all foundation bolts and fasteners are secure and protected against corrosion.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-20 bg-gray-800 text-white">
+        <section id="gallery" class="py-20 bg-gray-900">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <span class="text-sm font-semibold text-accent uppercase tracking-wider">Our Legacy</span>
-                    <h2 class="mt-2 text-3xl sm:text-4xl lg:text-5xl font-extrabold">
-                        Driven by Quality, Built on Experience
-                    </h2>
-                </div>
-                <div class="grid md:grid-cols-3 gap-8 text-center">
-                    <!-- Feature 1 -->
-                    <div class="bg-gray-700 p-8 rounded-xl shadow-xl transform transition duration-500 hover:scale-[1.02]">
-                        <div class="text-accent text-4xl mb-4"><i class="fas fa-certificate"></i></div>
-                        <h3 class="text-xl font-bold mb-3">25+ Years of Trust</h3>
-                        <p class="text-gray-300">Established in 1996 in Sharjah, we have a quarter-century track record of delivering excellence across the UAE.</p>
-                    </div>
-                    <!-- Feature 2 -->
-                    <div class="bg-gray-700 p-8 rounded-xl shadow-xl transform transition duration-500 hover:scale-[1.02]">
-                        <div class="text-accent text-4xl mb-4"><i class="fas fa-layer-group"></i></div>
-                        <h3 class="text-xl font-bold mb-3">End-to-End Solutions</h3>
-                        <p class="text-gray-300">From design and fabrication of steel structures to fabric installation, we handle the entire project lifecycle.</p>
-                    </div>
-                    <!-- Feature 3 -->
-                    <div class="bg-gray-700 p-8 rounded-xl shadow-xl transform transition duration-500 hover:scale-[1.02]">
-                        <div class="text-accent text-4xl mb-4"><i class="fas fa-shield-alt"></i></div>
-                        <h3 class="text-xl font-bold mb-3">Superior Materials</h3>
-                        <p class="text-gray-300">We utilize top-grade materials like PTFE, PVC, and HDPE fabric for maximum UV protection and longevity.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <h2 class="text-4xl font-extrabold text-center mb-4">Featured <span class="text-gradient">Projects</span></h2>
+                <p class="text-lg text-gray-400 text-center max-w-3xl mx-auto mb-16">
+                    A selection of our most recent and complex shade structures across the UAE. **Click to view details.**
+                </p>
 
-        <!-- Services Section -->
-        <section id="services" class="py-20 bg-gray-900 text-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <span class="text-sm font-semibold text-accent uppercase tracking-wider">What We Build</span>
-                    <h2 class="mt-2 text-3xl sm:text-4xl lg:text-5xl font-extrabold">
-                        Our Core Shade and Structure Services
-                    </h2>
-                </div>
-                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service 1 -->
-                    <div class="bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
-                        <img src="https://placehold.co/600x400/222f42/ffffff?text=Car+Parking+Shades" alt="Car Parking Shades" class="w-full h-48 object-cover">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="group bg-gray-800 rounded-xl shadow-xl overflow-hidden hover:shadow-accent/50 transition duration-500 cursor-pointer" data-project="car-parking">
+                        <div class="overflow-hidden">
+                            <img src="images/hero-19.jpg" alt="Car Parking Shades project" class="w-full h-56 object-cover transition duration-500 group-hover:scale-105">
+                        </div>
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-3 text-accent">Car Parking Shades</h3>
-                            <p class="text-gray-300">Customized car shade solutions using cantilever, arch, and conical designs for residential and commercial parking lots.</p>
+                            <h3 class="text-xl font-bold text-accent mb-2">Cantilever & Arch Shades</h3>
+                            <p class="text-gray-300">High-density parking solutions with minimal column interference.</p>
                         </div>
                     </div>
-                    <!-- Service 2 -->
-                    <div class="bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
-                        <img src="https://placehold.co/600x400/222f42/ffffff?text=Architectural+Tensile" alt="Architectural Tensile Structures" class="w-full h-48 object-cover">
+
+                    <div class="group bg-gray-800 rounded-xl shadow-xl overflow-hidden hover:shadow-accent/50 transition duration-500 cursor-pointer" data-project="tensile-structures">
+                        <div class="overflow-hidden">
+                            <img src="images/hero-15.jpg" alt="Architectural Tensile Structures project" class="w-full h-56 object-cover transition duration-500 group-hover:scale-105">
+                        </div>
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-3 text-accent">Tensile Structures</h3>
-                            <p class="text-gray-300">Innovative architectural designs for walkways, amphitheaters, and outdoor public spaces using tensioned fabric.</p>
+                            <h3 class="text-xl font-bold text-accent mb-2">Architectural Membranes</h3>
+                            <p class="text-gray-300">Custom-designed structures for public spaces and major commercial centers.</p>
                         </div>
                     </div>
-                    <!-- Service 3 -->
-                    <div class="bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
-                        <img src="https://placehold.co/600x400/222f42/ffffff?text=Industrial+Tents" alt="Industrial and Warehouse Tents" class="w-full h-48 object-cover">
+
+                    <div class="group bg-gray-800 rounded-xl shadow-xl overflow-hidden hover:shadow-accent/50 transition duration-500 cursor-pointer" data-project="tents-awnings">
+                        <div class="overflow-hidden">
+                            <img src="images/hero-8.jpg" alt="Tents and Awnings project" class="w-full h-56 object-cover transition duration-500 group-hover:scale-105">
+                        </div>
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-3 text-accent">Industrial Tents</h3>
-                            <p class="text-gray-300">Durable, temporary, and semi-permanent structures for industrial warehousing, storage, and events.</p>
+                            <h3 class="text-xl font-bold text-accent mb-2">Temporary & Permanent Tents</h3>
+                            <p class="text-gray-300">Event and industrial tents built for quick installation and extreme weather.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Projects Section (Gallery Placeholder) -->
-        <section id="projects" class="py-20 bg-gray-800 text-white">
+        
+        <section id="features" class="py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <span class="text-sm font-semibold text-accent uppercase tracking-wider">Our Work</span>
-                    <h2 class="mt-2 text-3xl sm:text-4xl lg:text-5xl font-extrabold">
-                        Showcase of Completed Projects
-                    </h2>
-                    <p class="mt-4 text-lg text-gray-400">A selection of our high-quality installations across the UAE.</p>
-                </div>
-                <!-- Project Grid Placeholder -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-xl aspect-square">
-                        <img src="https://placehold.co/400x400/374151/ffffff?text=Project+1" alt="Completed project" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-xl aspect-square">
-                        <img src="https://placehold.co/400x400/374151/ffffff?text=Project+2" alt="Completed project" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-xl aspect-square">
-                        <img src="https://placehold.co/400x400/374151/ffffff?text=Project+3" alt="Completed project" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-xl aspect-square">
-                        <img src="https://placehold.co/400x400/374151/ffffff?text=Project+4" alt="Completed project" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    </div>
-                </div>
-            </div>
-        </section>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <p class="text-accent uppercase tracking-widest font-semibold mb-3 text-sm">Our Difference</p>
+                        <h2 class="text-4xl font-extrabold mb-8">Uncompromising <span class="text-gradient">Quality and Expertise</span></h2>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 bg-gray-900 text-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <span class="text-sm font-semibold text-accent uppercase tracking-wider">Get in Touch</span>
-                    <h2 class="mt-2 text-3xl sm:text-4xl lg:text-5xl font-extrabold">
-                        Request a Free Quote Today
-                    </h2>
-                </div>
-                <div class="max-w-3xl mx-auto bg-gray-800 p-8 sm:p-12 rounded-xl shadow-2xl border-t-4 border-accent">
-                    <form id="quote-form" onsubmit="handleFormSubmit(event)">
-                        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
-                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-accent focus:border-accent">
+                        <div class="space-y-8">
+                            <div class="flex items-start">
+                                <svg class="w-8 h-8 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <div class="ml-4">
+                                    <h4 class="text-xl font-semibold text-white">25+ Years of Proven Expertise</h4>
+                                    <p class="text-gray-400 mt-1">Established in 1996, our deep experience ensures structurally sound and long-lasting shade solutions.</p>
+                                </div>
                             </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
-                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-accent focus:border-accent">
+
+                            <div class="flex items-start">
+                                <svg class="w-8 h-8 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 3a1 1 0 100 2h2a1 1 0 100-2h-2zM9 7a1 1 0 000 2h2a1 1 0 000-2H9zM7 11a1 1 0 100 2h2a1 1 0 100-2H7zM5 15a1 1 0 100 2h2a1 1 0 100-2H5zM17 11a1 1 0 100 2h-2a1 1 0 100-2h2zM15 7a1 1 0 100 2h-2a1 1 0 100-2h2zM19 3a1 1 0 100 2h-2a1 1 0 100-2h2zM3 3a1 1 0 100 2h-2a1 1 0 100-2h2zM3 15a1 1 0 100 2h-2a1 1 0 100-2h2zM19 15a1 1 0 100 2h-2a1 1 0 100-2h2z"></path></svg>
+                                <div class="ml-4">
+                                    <h4 class="text-xl font-semibold text-white">Strict QA/QC Procedures</h4>
+                                    <p class="text-gray-400 mt-1">Our Quality Assurance and Control processes cover every stage from material sourcing to final erection, ensuring code compliance.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <svg class="w-8 h-8 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172l-2.586-2.586a2 2 0 10-2.828 2.828l4 4a2 2 0 002.828 0l8-8a2 2 0 000-2.828z"></path></svg>
+                                <div class="ml-4">
+                                    <h4 class="text-xl font-semibold text-white">Comprehensive Maintenance Support</h4>
+                                    <p class="text-gray-400 mt-1">We provide operation and maintenance manuals, including biannual inspection guides for steel, fabric, and foundation bolts.</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="mt-6">
-                            <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-accent focus:border-accent">
-                        </div>
-                        <div class="mt-6">
-                            <label for="service" class="block text-sm font-medium text-gray-300 mb-2">Required Service</label>
-                            <select id="service" name="service" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-accent focus:border-accent appearance-none">
-                                <option value="" disabled selected class="text-gray-400">Select Service Type</option>
-                                <option value="Car Parking Shades">Car Parking Shades</option>
-                                <option value="Tensile Structures">Tensile Structures</option>
-                                <option value="Industrial Tents">Industrial Tents</option>
-                                <option value="Other">Other Shade/Tent Structure</option>
-                            </select>
-                        </div>
-                        <div class="mt-6">
-                            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Project Details / Message</label>
-                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-accent focus:border-accent"></textarea>
-                        </div>
-                        <div class="mt-8">
-                            <button type="submit" class="w-full bg-accent text-gray-900 py-3 rounded-full font-bold text-lg hover:bg-accent-dark transition duration-300 transform hover:scale-[1.01] shadow-xl">
-                                Submit Quote Request
-                            </button>
-                        </div>
-                    </form>
+                    </div>
+
+                    <div class="rounded-xl overflow-hidden shadow-2xl">
+                        <img src="images/hero-22.jpg" alt="Team performing quality inspection on a structure" class="w-full h-auto object-cover">
+                    </div>
                 </div>
             </div>
         </section>
+
+        <section id="about" class="py-20 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center mb-4">Our <span class="text-gradient">Mission & Values</span></h2>
+                <p class="text-lg text-gray-400 text-center max-w-3xl mx-auto mb-16">
+                    Established in 1996 in Sharjah, AZOV is driven by seasoned professionals committed to excellence.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="p-6 bg-gray-800 rounded-xl shadow-xl border-t-4 border-accent">
+                        <h3 class="text-2xl font-bold mb-3">Structural Integrity</h3>
+                        <p class="text-gray-300">We prioritize the long-term safety and durability of every structure, using high-grade, properly certified materials only.</p>
+                    </div>
+                    <div class="p-6 bg-gray-800 rounded-xl shadow-xl border-t-4 border-accent">
+                        <h3 class="text-2xl font-bold mb-3">Certified Materials</h3>
+                        <p class="text-gray-300">Only the best fabrics (HDPE, PVC, PTFE) and treated steel are used, guaranteeing UV and corrosion resistance.</p>
+                    </div>
+                    <div class="p-6 bg-gray-800 rounded-xl shadow-xl border-t-4 border-accent">
+                        <h3 class="text-2xl font-bold mb-3">Client Focus</h3>
+                        <p class="text-gray-300">We maintain transparency and communication, ensuring the final product exceeds the client's functional and aesthetic needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-cta" class="py-16 bg-accent">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Ready to Start Your Project?</h2>
+                <p class="text-xl text-gray-800 max-w-3xl mx-auto mb-8">
+                    Discuss your shading requirements with our experts and receive a free consultation.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                    <a href="tel:00971506520529" class="w-full md:w-auto text-center px-10 py-4 text-xl font-extrabold bg-gray-900 text-accent rounded-lg hover:bg-gray-700 transition duration-300 shadow-2xl flex items-center justify-center space-x-3">
+                        <i class="fas fa-phone"></i>
+                        <span>CALL US NOW</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-950 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-400">
+    <div id="project-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black bg-opacity-80 transition duration-300 ease-in-out" onclick="closeModal(event)">
+        <div class="modal-content bg-gray-800 rounded-xl shadow-2xl max-w-5xl w-full p-6 lg:p-10 transform transition-all duration-300 scale-95" onclick="event.stopPropagation()">
+            
+            <button class="absolute top-4 right-4 text-gray-300 hover:text-accent transition" onclick="closeModal()">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <div class="overflow-y-auto pr-2 modal-content">
+                <h3 id="modal-title" class="text-3xl font-bold text-gradient mb-4 pt-4">Project Title</h3>
                 
-                <!-- Company Info -->
+                <div class="relative h-96 bg-gray-900 rounded-lg overflow-hidden mb-6">
+                    <img id="modal-main-image" src="" alt="Project Image" class="w-full h-full object-cover transition duration-300 ease-in-out opacity-100">
+                    </div>
+                
+                <p id="modal-description" class="text-lg text-gray-300 mb-8"></p>
+
+                <button id="view-more-btn" class="mb-6 px-6 py-2 bg-accent text-gray-900 rounded-lg font-semibold hover:bg-accent-dark transition duration-300 w-full md:w-auto">
+                    View All Images
+                </button>
+                
+                <div id="full-gallery" class="hidden mt-6">
+                    <h4 class="text-2xl font-bold mb-4 text-white">Full Project Gallery</h4>
+                    <div id="modal-gallery-images" class="modal-gallery-container flex pb-4">
+                        </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <footer class="bg-gray-800 pt-16 pb-8 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 border-b border-gray-700 pb-10 mb-8">
+                
                 <div>
-                    <h3 class="text-xl font-bold text-accent mb-4">AZOV TENTS & SHADES</h3>
-                    <p class="text-sm">
-                        Leading manufacturers and installers of car parking shades and tensile structures in Sharjah, UAE. Quality and durability since 1996.
-                    </p>
+                    <h3 class="text-xl font-bold mb-4 text-white">AZOV SHADES</h3>
+                    <p class="mb-4">Specialists in Tents & Architectural Shade Structures in the UAE since 1996.</p>
+                    <p><strong>Location:</strong> Sharjah Industrial Area 15</p>
+                    <p><strong>Email:</strong> info@azovshades.com</p>
+                    <p><strong>Phone:</strong> 00971506520529</p>
                 </div>
 
-                <!-- Quick Links -->
                 <div>
-                    <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                    <h3 class="text-xl font-bold mb-4 text-white">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="#about" class="hover:text-accent transition">About Us</a></li>
-                        <li><a href="#services" class="hover:text-accent transition">Our Services</a></li>
-                        <li><a href="#projects" class="hover:text-accent transition">Projects Gallery</a></li>
-                        <li><a href="#contact" class="hover:text-accent transition">Request Quote</a></li>
+                        <li><a href="#home" class="hover:text-accent transition duration-300">Home</a></li>
+                        <li><a href="#services" class="hover:text-accent transition duration-300">Our Services</a></li>
+                        <li><a href="#gallery" class="hover:text-accent transition duration-300">Project Gallery</a></li>
+                        <li><a href="#about" class="hover:text-accent transition duration-300">About Us</a></li>
                     </ul>
                 </div>
 
-                <!-- Contact Details (UPDATED SECTION) -->
                 <div>
-                    <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
-                    <ul class="space-y-3">
-                        <!-- Email Link -->
-                        <li class="flex items-start">
-                            <i class="fas fa-envelope text-accent text-lg mt-1 mr-3"></i>
-                            <a href="mailto:azov@eim.ae" class="hover:text-accent transition break-all">azov@eim.ae</a>
-                        </li>
-                        <!-- Phone Link -->
-                        <li class="flex items-start">
-                            <i class="fas fa-phone-alt text-accent text-lg mt-1 mr-3"></i>
-                            <a href="tel:+971506520529" class="hover:text-accent transition">+971 50 652 0529</a>
-                        </li>
-                        <!-- WhatsApp Link -->
-                        <li class="flex items-start">
-                            <i class="fab fa-whatsapp text-accent text-lg mt-1 mr-3"></i>
-                            <!-- Use the international format for the link -->
-                            <a href="https://wa.me/971506520529" target="_blank" class="hover:text-accent transition">+971 50 652 0529 (WhatsApp)</a>
-                        </li>
+                    <h3 class="text-xl font-bold mb-4 text-white">Contact & Connect</h3>
+                    
+                    <ul class="space-y-2 mb-6">
+                        <li><a href="#" onclick="alert('Annual inspection for rust on fasteners is recommended.')" class="hover:text-accent transition duration-300">Fastener Maintenance</a></li>
+                        <li><a href="#" onclick="alert('Clean fabric by hosing down with water. Avoid strong detergents.')" class="hover:text-accent transition duration-300">Fabric Cleaning Guide</a></li>
                     </ul>
-                </div>
 
-                <!-- Social Media (UPDATED SECTION) -->
-                <div>
-                    <h3 class="text-lg font-semibold text-white mb-4">Connect</h3>
                     <div class="flex space-x-4">
-                        <!-- LinkedIn Icon -->
-                        <a href="#" target="_blank" class="text-gray-400 hover:text-accent transition transform hover:scale-110">
-                            <i class="fab fa-linkedin text-2xl"></i>
+                        <a href="tel:00971506520529" aria-label="Call Us" class="text-xl p-3 bg-gray-700 rounded-full hover:bg-accent hover:text-gray-900 transition duration-300">
+                            <i class="fas fa-phone"></i>
                         </a>
-                        <!-- Facebook Placeholder -->
-                        <a href="#" target="_blank" class="text-gray-400 hover:text-accent transition transform hover:scale-110">
-                            <i class="fab fa-facebook-f text-2xl"></i>
+                        <a href="https://wa.me/971506520529" target="_blank" aria-label="WhatsApp" class="text-xl p-3 bg-gray-700 rounded-full hover:bg-accent hover:text-gray-900 transition duration-300">
+                            <i class="fab fa-whatsapp"></i>
                         </a>
-                        <!-- Instagram Placeholder -->
-                        <a href="#" target="_blank" class="text-gray-400 hover:text-accent transition transform hover:scale-110">
-                            <i class="fab fa-instagram text-2xl"></i>
+                        <a href="mailto:info@azovshades.com" aria-label="Email" class="text-xl p-3 bg-gray-700 rounded-full hover:bg-accent hover:text-gray-900 transition duration-300">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" target="_blank" aria-label="LinkedIn (Placeholder)" class="text-xl p-3 bg-gray-700 rounded-full hover:bg-accent hover:text-gray-900 transition duration-300">
+                            <i class="fab fa-linkedin"></i>
                         </a>
                     </div>
-                    <p class="text-xs mt-6 text-gray-500">&copy; 2024 AZOV TENTS & SHADES IND. L.L.C. All rights reserved.</p>
                 </div>
 
+            </div>
+
+            <div class="text-center text-sm text-gray-500">
+                &copy; 2024 AZOV TENTS & SHADES IND. L.L.C. All rights reserved.
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript Section -->
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // --- Mobile Menu Toggle ---
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Helper Data for Project Modal ---
+            const projectData = {
+                'car-parking': {
+                    title: 'Cantilever & Arch Car Shades',
+                    description: 'Our flagship car parking solutions offer maximum coverage with minimal structural interference. Ideal for corporate offices, residential complexes, and public parking lots. We use high-grade HDPE and PVC fabrics for superior UV protection and longevity.',
+                    images: [
+                        'images/hero-19.jpg', // Main Image
+                        'images/parking-1.jpg', // Placeholder 1
+                        'images/parking-2.jpg', // Placeholder 2
+                        'images/parking-3.jpg', // Placeholder 3
+                        'images/parking-4.jpg'  // Placeholder 4
+                        // Use your actual image paths here
+                    ]
+                },
+                'tensile-structures': {
+                    title: 'Architectural Tensile Structures',
+                    description: 'Custom-engineered and built for large-scale application, including stadium entrances, public plazas, and mosque areas. Utilizing high-performance PTFE and PVC-coated membranes for exceptional aesthetic appeal and durability against extreme weather conditions.',
+                    images: [
+                        'images/hero-15.jpg', // Main Image
+                        'images/tensile-1.jpg', // Placeholder 1
+                        'images/tensile-2.jpg', // Placeholder 2
+                        'images/tensile-3.jpg', // Placeholder 3
+                        'images/tensile-4.jpg'  // Placeholder 4
+                    ]
+                },
+                'tents-awnings': {
+                    title: 'Temporary & Permanent Tents',
+                    description: 'A range of durable tent and awning solutions for events, storage, and industrial use. Designed for quick setup, stability, and maximum interior space. Available in various sizes and certified fire-retardant PVC fabric.',
+                    images: [
+                        'images/hero-8.jpg', // Main Image
+                        'images/tents-1.jpg', // Placeholder 1
+                        'images/tents-2.jpg', // Placeholder 2
+                        'images/tents-3.jpg', // Placeholder 3
+                        'images/tents-4.jpg'  // Placeholder 4
+                    ]
+                }
+            };
+            
+            // --- Global/Common Selectors ---
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            const heroSliderImage = document.getElementById('hero-slider-image');
+            
+            // --- Modal Selectors ---
+            const projectModal = document.getElementById('project-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+            const modalMainImage = document.getElementById('modal-main-image');
+            const fullGalleryContainer = document.getElementById('full-gallery');
+            const modalGalleryImages = document.getElementById('modal-gallery-images');
+            const viewMoreBtn = document.getElementById('view-more-btn');
 
+            let currentProjectImages = [];
+            let currentSlideIndex = 0;
+            let slideshowInterval;
+            
+            // 1. Mobile Menu Toggle
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
 
-            // Close mobile menu when a link is clicked
-            mobileMenu.querySelectorAll('a').forEach(link => {
+            // 2. Auto-close mobile menu on link click
+            mobileLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('hidden');
                 });
             });
 
-            // --- Form Submission Handler (Placeholder) ---
-            function handleFormSubmit(event) {
-                event.preventDefault();
-                // In a real application, you would send the form data to a server here.
+            // 3. Hero Section Image Slideshow Logic
+            const heroImages = [
+                'images/hero-1.jpg',
+                'images/hero-2.jpg',
+                'images/hero-3.jpg',
+                'images/hero-4.jpg',
+                'images/hero-5.jpg',
+                'images/hero-6.jpg',
+                'images/hero-7.jpg'
+            ];
+            let currentHeroIndex = 0;
+            
+            function startHeroSlideshow() {
+                if (heroImages.length === 0 || !heroSliderImage) return;
                 
-                // Get form data (optional, for logging/debugging)
-                const formData = new FormData(document.getElementById('quote-form'));
-                const submissionData = Object.fromEntries(formData.entries());
-                console.log('Form Submitted:', submissionData);
+                heroSliderImage.src = heroImages[currentHeroIndex];
 
-                // Display a custom success message
-                window.alert('Thank you for your quote request! We have received your message and will contact you within one business day.');
-
-                // Reset the form after submission
-                document.getElementById('quote-form').reset();
-            }
-            // Expose the function globally so the form's onsubmit can call it
-            window.handleFormSubmit = handleFormSubmit;
-
-            // --- Hero Image Slideshow ---
-            const slides = document.querySelectorAll('.slide');
-            if (slides.length > 0) {
-                let currentIndex = 0;
-                
-                const showSlide = (index) => {
-                    slides.forEach((slide, i) => {
-                        slide.classList.remove('active');
-                        if (i === index) {
-                            slide.classList.add('active');
-                        }
-                    });
+                heroSliderImage.onerror = function() {
+                    console.error('Failed to load hero image:', heroSliderImage.src);
+                    heroSliderImage.src = 'https://placehold.co/1920x600/1e293b/FFFFFF?text=AZOV+PROJECT+ERROR'; 
                 };
+                
+                setInterval(() => {
+                    const nextIndex = (currentHeroIndex + 1) % heroImages.length;
+                    
+                    heroSliderImage.style.opacity = '0'; 
 
-                const startSlideshow = () => {
-                    // Show the first slide immediately
-                    showSlide(currentIndex);
+                    setTimeout(() => {
+                        currentHeroIndex = nextIndex;
+                        heroSliderImage.src = heroImages[currentHeroIndex];
+                        heroSliderImage.style.opacity = '1';
+                    }, 500);
 
-                    setInterval(() => {
-                        const nextIndex = (currentIndex + 1) % slides.length;
-                        showSlide(nextIndex);
-                        currentIndex = nextIndex;
-                    }, 5000); 
-                }
-
-                startSlideshow();
+                }, 5000); // Change slide every 5 seconds (5000ms)
             }
 
-            /**
-             * Simple custom alert function as a replacement for window.alert()
-             * NOTE: Added alert-content class to handle newlines (\n)
-             */
+            if (heroSliderImage) {
+                startHeroSlideshow();
+            }
+
+            // --- 4. Project Modal Logic ---
+            
+            function openModal(projectKey) {
+                const data = projectData[projectKey];
+                if (!data) return;
+
+                // Reset state
+                currentProjectImages = data.images;
+                currentSlideIndex = 0;
+                fullGalleryContainer.classList.add('hidden');
+                viewMoreBtn.textContent = 'View All Images'; // Reset button text
+
+                // Populate Modal
+                modalTitle.textContent = data.title;
+                modalDescription.textContent = data.description;
+                modalMainImage.src = data.images[0];
+                modalMainImage.alt = data.title + " - Project View";
+
+                // Initialize Slideshow
+                startProjectSlideshow();
+                
+                // Show Modal
+                projectModal.classList.remove('hidden');
+                projectModal.classList.add('flex');
+            }
+
+            window.closeModal = function(event) {
+                // Allows clicking outside the modal content to close it
+                if (event && event.target !== projectModal) return; 
+                
+                clearInterval(slideshowInterval); // Stop automation
+                projectModal.classList.add('hidden');
+                projectModal.classList.remove('flex');
+            }
+
+            function startProjectSlideshow() {
+                clearInterval(slideshowInterval); // Clear any existing interval
+                
+                if (currentProjectImages.length < 2) return;
+
+                slideshowInterval = setInterval(() => {
+                    currentSlideIndex = (currentSlideIndex + 1) % currentProjectImages.length;
+                    
+                    // Simple crossfade for main image
+                    modalMainImage.style.opacity = '0'; 
+                    setTimeout(() => {
+                        modalMainImage.src = currentProjectImages[currentSlideIndex];
+                        modalMainImage.style.opacity = '1';
+                    }, 300); // Shorter fade for modal
+                    
+                }, 3000); // Change slide every 3 seconds
+            }
+            
+            // Attach click listeners to gallery items
+            document.querySelectorAll('#gallery [data-project]').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    const projectKey = e.currentTarget.getAttribute('data-project');
+                    openModal(projectKey);
+                });
+            });
+            
+            // "View All Images" button functionality
+            viewMoreBtn.addEventListener('click', () => {
+                if (fullGalleryContainer.classList.contains('hidden')) {
+                    // Show full gallery
+                    clearInterval(slideshowInterval); // Stop automation
+                    fullGalleryContainer.classList.remove('hidden');
+                    viewMoreBtn.textContent = 'Close Full Gallery';
+
+                    // Populate the horizontal scroll gallery
+                    modalGalleryImages.innerHTML = '';
+                    currentProjectImages.forEach(src => {
+                        const img = document.createElement('img');
+                        img.src = src;
+                        img.alt = modalTitle.textContent + " - Gallery Image";
+                        img.className = 'modal-gallery-item rounded-lg shadow-md';
+                        modalGalleryImages.appendChild(img);
+                    });
+
+                } else {
+                    // Hide full gallery and restart slideshow
+                    fullGalleryContainer.classList.add('hidden');
+                    viewMoreBtn.textContent = 'View All Images';
+                    startProjectSlideshow(); // Restart automation
+                }
+            });
+
+
+            // 5. Custom Alert Implementation (from original code)
             function alert(message) {
                 const existingAlert = document.getElementById('custom-alert');
                 if (existingAlert) existingAlert.remove();
@@ -420,7 +596,7 @@
                 alertBox.innerHTML = `
                     <div class="bg-gray-800 rounded-lg shadow-2xl p-6 max-w-sm w-full transform transition-all duration-300 scale-100 border-t-4 border-accent">
                         <h5 class="text-xl font-bold mb-3 text-white flex items-center"><span class="text-accent mr-2">!</span> Information</h5>
-                        <p class="text-gray-300 mb-6 whitespace-pre-wrap">${message}</p>
+                        <p class="text-gray-300 mb-6 alert-content">${message}</p>
                         <button onclick="document.getElementById('custom-alert').remove()" class="w-full bg-accent text-gray-900 py-2 rounded-lg font-semibold hover:bg-accent-dark transition">
                             Understood
                         </button>
